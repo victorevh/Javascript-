@@ -123,3 +123,40 @@ console.log([
   2,
   3,
 ])
+
+ // variaveis
+    // var
+    // let
+    // const : não pode mudar pois o valor está atribuido a variavel constante
+    
+    const clima = "Quente"
+    console.log(typeof clima)
+    
+    var solo = "litosolo"
+    console.log(typeof solo)
+
+    let numero = 38
+    console.log(typeof numero)
+
+    let TORF = false //boolean
+    TORF = "" //string
+    console.log(typeof TORF) //typeof para mostrar o tipo de variavel no console
+
+// var é global e, também local
+// hoisting
+console.log('> existe x antes do bloco? ', x)
+
+{
+    var x = 0;
+}
+
+console.log('> existe x depois do bloco? ', x)
+
+// const e let são locais e só funcionam no escopo onde foi criada
+let y = 1;
+{
+    let y = 0
+    console.log('> existe y antes do bloco ', y)
+}
+console.log('> existe y depois do bloco ', y)
+
