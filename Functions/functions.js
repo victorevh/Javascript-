@@ -1,9 +1,23 @@
-// fumction expression
-// function anonymous
+/*
+  Function() constructor
+  
+  * expressão new
+  * criar um novo objeto
+  * this keyword
+*/
 
-// parâmetros (parameters) (number1, number2)
-const sum = function(number1, number2) {
-    console.log(number1 + number2)
+function Person(name) {
+    this.name = name
+    this.walk = function() {
+        return this.name + " está andando"
+    }
 }
+// com isso declaro uma nova propriedade mame na função Person
+const victor = new Person("Victor")
+const joao = new Person("João")
+console.log(victor.walk())
+console.log(joao.walk())
 
-sum(5, 3) // arguments - argumentos
+let date = new Date("2021-06-11")
+
+console.log(date)
