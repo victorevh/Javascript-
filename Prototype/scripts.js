@@ -30,7 +30,7 @@ while(i < 10) {
 
     i++;
 }
-*/
+
 
 // While faz muito sentido quando não sabemos qual o momento da parada exemplo
 
@@ -39,4 +39,36 @@ while(i > 12) {
     console.log(i)
 
     i /= 25
+}
+*/
+
+// for...of
+/*
+let name = 'Mayk';
+let names = ['João' , 'Paulo' , 'Pedro'];
+
+
+for(let char of name){
+    console.log(char)
+}
+
+
+for(let name of names){
+    console.log(name)
+}
+*/
+
+// for...in
+
+let person = {
+    name: 'Victor',
+    age: 24,
+    weight: 88.6
+}
+
+for(let property in person){
+ //   console.log(property)
+ //   console.log(person.name)
+ //   console.log(person[property])
+    console.log(person["name"])
 }
