@@ -9,7 +9,6 @@
 for(let a = 0; a <= 10; a++) {
     console.log(a)
 }
-
 for(let i = 20; i > 0; i--) {
     if(i === 10) {
         break;
@@ -17,7 +16,6 @@ for(let i = 20; i > 0; i--) {
     if(i === 15) {
         continue;
     }
-
     console.log(i)
 }
 */
@@ -27,17 +25,12 @@ for(let i = 20; i > 0; i--) {
 let i = 0;
 while(i < 10) {
     console.log(i)
-
     i++;
 }
-
-
 // While faz muito sentido quando não sabemos qual o momento da parada exemplo
-
 let i = 5000000;
 while(i > 12) {
     console.log(i)
-
     i /= 25
 }
 */
@@ -46,13 +39,9 @@ while(i > 12) {
 /*
 let name = 'Mayk';
 let names = ['João' , 'Paulo' , 'Pedro'];
-
-
 for(let char of name){
     console.log(char)
 }
-
-
 for(let name of names){
     console.log(name)
 }
