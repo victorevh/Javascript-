@@ -1,74 +1,89 @@
-// Estrutura de repetição
-// for
+/* 
+   Buscando e contando dados em Arrays
+   Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
 
-// break = parar a execução do looping
-// continue = pula a execução do looping 
+        * Contar o número de categorias e o número de livros em cada categoria
+        * Contar o número de autores
+        * Mostrar livros do autor Auguto Cury
+        * Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
+        
+*/
 
+const booksByCategory = [
+    {
+        category: "Riqueza",
+        books: [
+            {
+                title: "Os segredos da mente milionária",
+                author: "T. Harv Eker",
+            },
+            {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clason",
+            },
+            {
+                title: "Pai rico, pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Lechter",
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Ansiedade - Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey",
+            },
+        ],
+    },
+]
 
-/*
-for(let a = 0; a <= 10; a++) {
-    console.log(a)
+const totalCategories = booksByCategory.length
+
+console.log(booksByCategory.length);
+for(let category of booksByCategory) {
+    console.log('Total de livros da categoria', category.category)
+    console.log(category.books.length)
 }
 
-for(let i = 20; i > 0; i--) {
-    if(i === 10) {
-        break;
+// Contar o número de autores
+
+function countAuthores() {
+    let authors = [];
+
+    for(let category of booksByCategory) {
+        for(let book of category.books) {
+            // Verficiando se dentro do array authors tem algum elemento com o autor desse livro, caso não esteja o push adiciona
+            if(authors.indexOf(book.author) == -1){
+                authors.push(book.author)
+            }
+        }
     }
-    if(i === 15) {
-        continue;
+    
+    console.log("Total de autores: ", authors.length)
+}
+
+countAuthores();
+
+function countAuthores() {
+    let authors = [];
+
+    for(let category of booksByCategory) {
+        for(let book of category.books) {
+            // Verficiando se dentro do array authors tem algum elemento com o autor desse livro, caso não esteja o push adiciona
+            if(authors.indexOf(book.author) == -1){
+                authors.push(book.author)
+            }
+        }
     }
-
-    console.log(i)
-}
-*/
-
-// while
-/*
-let i = 0;
-while(i < 10) {
-    console.log(i)
-
-    i++;
-}
-
-
-// While faz muito sentido quando não sabemos qual o momento da parada exemplo
-
-let i = 5000000;
-while(i > 12) {
-    console.log(i)
-
-    i /= 25
-}
-*/
-
-// for...of
-/*
-let name = 'Mayk';
-let names = ['João' , 'Paulo' , 'Pedro'];
-
-
-for(let char of name){
-    console.log(char)
-}
-
-
-for(let name of names){
-    console.log(name)
-}
-*/
-
-// for...in
-
-let person = {
-    name: 'Victor',
-    age: 24,
-    weight: 88.6
-}
-
-for(let property in person){
- //   console.log(property)
- //   console.log(person.name)
- //   console.log(person[property])
-    console.log(person["name"])
+    
+    console.log("Total de autores: ", authors.length)
 }
