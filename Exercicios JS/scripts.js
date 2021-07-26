@@ -1,46 +1,89 @@
-/* ### Sistema de gastos familiar
+/* 
+   Buscando e contando dados em Arrays
+   Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
 
-
-Crie um objeto que possuirá 2 propriedades, ambas do tipo array:
-   * Receitas: []
-   * Despesas: []
-
-Agora, crie uma função que irá calcular o total e receitas e despesas e irá mostrar uma mensagem se a família está com o saldo positivo ou negativo, seguido do valor do saldo
-
+        * Contar o número de categorias e o número de livros em cada categoria
+        * Contar o número de autores
+        * Mostrar livros do autor Auguto Cury
+        * Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
+        
 */
 
-let family = {
-    incomes: [500.40, 500.34, 1300.10, 900.00],
-    expenses: [430.20, 1130.45, 1000.40, 1500.00]
+const booksByCategory = [
+    {
+        category: "Riqueza",
+        books: [
+            {
+                title: "Os segredos da mente milionária",
+                author: "T. Harv Eker",
+            },
+            {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clason",
+            },
+            {
+                title: "Pai rico, pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Lechter",
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Ansiedade - Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey",
+            },
+        ],
+    },
+]
+
+const totalCategories = booksByCategory.length
+
+console.log(booksByCategory.length);
+for(let category of booksByCategory) {
+    console.log('Total de livros da categoria', category.category)
+    console.log(category.books.length)
 }
 
-// Função para somar os numeros dentro de cada array
+// Contar o número de autores
 
-function sum(array) {
-    let total = 0
-    
-    for(let value of array) {
-        total += value
+function countAuthores() {
+    let authors = [];
+
+    for(let category of booksByCategory) {
+        for(let book of category.books) {
+            // Verficiando se dentro do array authors tem algum elemento com o autor desse livro, caso não esteja o push adiciona
+            if(authors.indexOf(book.author) == -1){
+                authors.push(book.author)
+            }
+        }
     }
     
-    return total
+    console.log("Total de autores: ", authors.length)
 }
 
-function calculateBalance() {
-    const calculateIncomes = sum(family.incomes)
-    const calculateExpenses = sum(family.expenses)
+countAuthores();
 
-    const total = calculateIncomes - calculateExpenses
+function countAuthores() {
+    let authors = [];
 
-    const itsOk = total >= 0
-
-    let balanceText = "Negativo"
-    
-    if(itsOk) {
-        balanceText = "Positivo"
+    for(let category of booksByCategory) {
+        for(let book of category.books) {
+            // Verficiando se dentro do array authors tem algum elemento com o autor desse livro, caso não esteja o push adiciona
+            if(authors.indexOf(book.author) == -1){
+                authors.push(book.author)
+            }
+        }
     }
-
-    console.log(`Seu saldo é ${balanceText}: ${total.toFixed(2)} R$`)
+    
+    console.log("Total de autores: ", authors.length)
 }
-
-calculateBalance()
