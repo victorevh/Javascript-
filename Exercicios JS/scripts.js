@@ -73,17 +73,40 @@ function countAuthores() {
 
 countAuthores();
 
-function countAuthores() {
-    let authors = [];
+// Contar os livros de um determinado autor
+
+function booksOfAugustoCury() {
+    let books = [];
 
     for(let category of booksByCategory) {
         for(let book of category.books) {
-            // Verficiando se dentro do array authors tem algum elemento com o autor desse livro, caso não esteja o push adiciona
-            if(authors.indexOf(book.author) == -1){
-                authors.push(book.author)
+            // se o livro e o autor for estritamente igual ao Augusto Cury a estrutura vai adicionar o livro a Array
+            if(book.author === 'Augusto Cury') {
+                books.push(book.title)
             }
         }
     }
     
-    console.log("Total de autores: ", authors.length)
+    console.log("Livros do autor: ", books)
 }
+
+booksOfAugustoCury()
+
+// Transformar a função acima em uma função que vai receber o nome do autor e entregar o nome dos livros.
+
+function booksOfAuthor(author) {
+    let books = [];
+
+    for(let category of booksByCategory) {
+        for(let book of category.books) {
+            // se o livro e o autor for estritamente igual ao autor a estrutura vai adicionar o livro a Array
+            if(book.author === author) {
+                books.push(book.title)
+            }
+        }
+    }
+    
+    console.log(`Livros do autor ${author}: ${books.join(", ")}`)
+}
+
+booksOfAuthor('Augusto Cury')
