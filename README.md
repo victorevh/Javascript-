@@ -1,6 +1,6 @@
 # Fundamentals JavaScript
 
-* Functions
-* Structures 
-* Expressions
+* `Functions`
+* `Structures`
+* `Expressions`
   
